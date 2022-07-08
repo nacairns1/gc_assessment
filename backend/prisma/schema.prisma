@@ -1,0 +1,15 @@
+// This is the Prisma file where it pulls in the schemas set up in the database.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model TestSetup {
+  id Int @id @default(autoincrement())
+  name String @default("DEFAULT")
+}
